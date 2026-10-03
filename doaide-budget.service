@@ -1,0 +1,15 @@
+[Unit]
+Description=DoAide Budget — Free Personal Budget Tracker
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/DoAide-Budget
+ExecStart=/usr/bin/node node_modules/.bin/vite preview --host 172.18.0.1 --port 3065
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
